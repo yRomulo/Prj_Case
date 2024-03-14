@@ -1,5 +1,5 @@
 export function NoteCreation() {
     return(
-        <h1>Hello world</h1>
+        <h1>Note ceration</h1>
     )
  }
