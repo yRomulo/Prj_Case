@@ -24,10 +24,73 @@ export const Content = styled.div`
     flex-direction: column;
     >h1{
         font-size: 18px;
-    }
+        padding-bottom: 40px;
+    }  
+    >form{
+        width: 300px;
 
-    
+        >h1{
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        >input{
+            width: 547px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        >ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            margin-bottom: 30px;
+        }
+        >.checkbox{
+            >label{
+                font-size: 30px;
+            }
+        }
+        >#cadastrar{
+            height: 30px;
+            width: 100px;
+            border-radius: 8px;
+            background-color: green;
+            color: white;
+            
+            
+        }
+}
+`;
+
+export const Section = styled.div`
+    width: 300px;
+
+    >h1{
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
     >input{
+        width: 547px;
         border-radius: 8px;
+        margin-bottom: 16px;
+    }
+    >ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        margin-bottom: 30px;
+        >input{
+            border-radius: 50%;
+        }
+    }
+    >button{
+        height: 30px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: green;
+        color: white;
+           
+        
     }
 `;
