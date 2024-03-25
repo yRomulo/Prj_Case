@@ -1,50 +1,62 @@
-import React, { useState } from 'react';
-import { Container, Sidebar, Content, Section } from "./styles";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, Sidebar, Content } from "./styles";
 
-export function NoteCreation({noteCreation}) {
-    const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [prioridade, setPrioridade] = useState('');
-  
-    const handleChangeTitulo = (event) => {
-      setTitulo(event.target.value);
-    };
-  
-    const handleChangeDescricao = (event) => {
-      setDescricao(event.target.value);
-    };
-  
-    const handleChangePrioridade = (event) => {
-      setPrioridade(event.target.value);
-    };
-  
-    const handleCadastrar = () => {
-      if (!titulo || !descricao || !prioridade) return;
-      adicionarTarefa({ titulo, descricao, prioridade });
-      setTitulo('');
-      setDescricao('');
-      setPrioridade('');
-    };
-    return (
+export function NoteCreation({ noteCreation }) {
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [prioridade, setPrioridade] = useState("");
+
+  const handleChangeTitulo = (event) => {
+    setTitulo(event.target.value);
+  };
+
+  const handleChangeDescricao = (event) => {
+    setDescricao(event.target.value);
+  };
+
+  const handleChangePrioridade = (event) => {
+    setPrioridade(event.target.value);
+  };
+
+  const handleCadastrar = () => {
+    if (!titulo || !descricao || !prioridade) return;
+    adicionarTarefa({ titulo, descricao, prioridade });
+    setTitulo("");
+    setDescricao("");
+    setPrioridade("");
+  };
+  return (
     <Container>
-      <Sidebar></Sidebar>
+      <Sidebar>
+        <button>Voltar a lista de tarefas</button>
+        
+      </Sidebar>
       <Content>
         <h1>Nova Tarefa</h1>
+
         <label>
-          
-          <input type="text" value={titulo} onChange={handleChangeTitulo} />
+          <input
+            type="text"
+            placeholder="Título"
+            value={titulo}
+            onChange={handleChangeTitulo}
+          />
         </label>
         <br />
         <label>
-          
           <input
+            id="desc"
             type="text"
+            placeholder="Descrição"
             value={descricao}
             onChange={handleChangeDescricao}
           />
         </label>
         <br />
+
         <h2>Prioridade</h2>
+
         <ul className="prioridade">
           <li>
             <input

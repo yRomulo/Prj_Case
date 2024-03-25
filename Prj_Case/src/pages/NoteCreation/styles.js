@@ -13,7 +13,22 @@ export const Container = styled.div`
 `;
 
 export const Sidebar = styled.div`
-    background-color:  gray;
+    background-color:  #EEEEEE;
+    
+    >button{
+        height: 26px;
+        width: 150px;
+        margin-top: 18px;
+        margin-left: 16px;
+        border-radius: 8px;
+        border: none;
+        background-color: #2F3640;
+        color: white;
+        font-size: 12px;
+    }
+    >button:hover{
+        background-color: gray;
+    }
 `;
 
 export const Content = styled.div`
@@ -22,75 +37,50 @@ export const Content = styled.div`
     width: 547px;
     display: flex;
     flex-direction: column;
+          
     >h1{
         font-size: 18px;
-        padding-bottom: 40px;
-    }  
-    >form{
-        width: 300px;
-
-        >h1{
-            font-size: 16px;
-            margin-bottom: 6px;
-        }
-        >input{
-            width: 547px;
+        margin-bottom: 40px;
+    }
+    >h2{
+        font-size: 14px;
+        color: #666666;
+    }
+    >label{
+        input{
+            border: 1px solid #666666;
             border-radius: 8px;
-            margin-bottom: 16px;
-        }
-        >ul{
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            gap: 6px;
-            margin-bottom: 30px;
-        }
-        >.checkbox{
-            >label{
-                font-size: 30px;
-            }
-        }
-        >#cadastrar{
+            width: 600px;
             height: 30px;
-            width: 100px;
-            border-radius: 8px;
-            background-color: green;
-            color: white;
-            
-            
+            padding-left: 22px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
-}
-`;
-
-export const Section = styled.div`
-    width: 300px;
-
-    >h1{
-        font-size: 16px;
-        margin-bottom: 6px;
     }
-    >input{
-        width: 547px;
-        border-radius: 8px;
-        margin-bottom: 16px;
-    }
-    >ul{
+        
+        
+    >.prioridade{
+        color: #666666;
         list-style: none;
         display: flex;
         flex-direction: row;
-        gap: 6px;
-        margin-bottom: 30px;
-        >input{
-            border-radius: 50%;
+        gap: 8px;
+        align-items: center;
+        label{
+            font-size: 14px;
+            margin-left: 3px;
         }
     }
     >button{
-        height: 30px;
-        width: 100px;
+        height: 26px;
+        width: 78px;
         border-radius: 8px;
-        background-color: green;
+        border: none;
+        background-color:#44BD32;
         color: white;
-           
-        
+        font-size: 12px;
+    }
+    >button:hover{
+        background-color: green;
     }
 `;

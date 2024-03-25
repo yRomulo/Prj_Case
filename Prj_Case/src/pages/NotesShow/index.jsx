@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from "./styles.js";
 
-export default function NotesShow({ tarefas, editarTarefa }) {
+export function NotesShow({ tarefas, editarTarefa }) {
   const handleEditar = (index) => {
     const novaDescricao = prompt("Digite a nova descrição:");
     if (novaDescricao !== null) {
