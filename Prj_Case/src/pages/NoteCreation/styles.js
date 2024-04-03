@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100%;
 
     display: grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 224px auto;
     grid-template-rows: 100vh;
     grid-template-areas: "sidebar content";
 
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div`
     background-color:  #EEEEEE;
-    
+    width: 224px;
     >button{
         height: 26px;
         width: 150px;
