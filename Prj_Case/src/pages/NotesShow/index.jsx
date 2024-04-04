@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Sidebar } from "./styles.js";
-import { Content } from '../NoteCreation/styles.js';
+import { Container, Sidebar, Content } from "./styles.js";
 
-export function NotesShow({ tarefas, editarTarefa }) {
+
+export function NotesShow() {
   return (
     <Container>
       <Sidebar>
@@ -19,8 +19,20 @@ export function NotesShow({ tarefas, editarTarefa }) {
       <Content>
         <h1>amostragem</h1>
         <ul>
-          <li><h2>Estudar progrmação</h2></li>
-          <li><h2>exemplo 2</h2></li>
+          <li>
+            <div>
+              <input type="checkbox" name="" id="" /><h2>Estudar progrmação</h2>
+              
+              <button>importante</button>
+              <button>pendente</button>
+            </div>
+            <p>Lorem ipsum dolor molestias velit iure eaque veniam fuga quo voluptatem?</p>
+            <footer>
+              <button type="submit" placeholder="editar"></button>
+              <button type="submit" placeholder="salvar"></button>
+            </footer>
+          </li>
+          <li><input type="checkbox" name="" id="" /><h2>exemplo 2</h2></li>
         </ul>
       </Content>
     </Container>

@@ -57,7 +57,6 @@ export const Sidebar = styled.div`
 
 export const Content = styled.div`
     padding: 40px;
-    
     >h1{
         width:fit-content;
         height: 21px;
@@ -69,6 +68,21 @@ export const Content = styled.div`
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 32px;
+        >li{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 1050px;
+            height: 215px;
+            
+            >div{
+                display: flex;
+                gap: 8px;
+                >h2{
+                font-size: 18px;
+            }
+            }
+        }
     }
 `;
