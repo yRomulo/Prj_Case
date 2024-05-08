@@ -11,6 +11,7 @@ export function NotesShow(tarefa) {
   const [tarefasExibidas, setTarefasExibidas] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState(null);
+  const [pesquisa, setPesquisa] = useState("");
 
   useEffect(() => {
     handleListarTarefas();
@@ -68,10 +69,21 @@ export function NotesShow(tarefa) {
     setTarefasExibidas(tarefasFiltradas);
   };
 
+  const handlePesquisarTarefas = (event) => {
+    const termoPesquisa = event.target.value.toLowerCase();
+    const tarefasFiltradas = tarefasOriginais.filter(
+      (tarefa) =>
+        tarefa.titulo.toLowerCase().includes(termoPesquisa) ||
+        tarefa.descricao.toLowerCase().includes(termoPesquisa)
+    );
+    setPesquisa(termoPesquisa);
+    setTarefasExibidas(tarefasFiltradas);
+  };
+
   return (
     <Container>
       <Sidebar>
-        <input type="search" name="Procurar" id="" placeholder="Procurar" />
+        <input type="search" name="Procurar" id="" placeholder="Procurar" onChange={handlePesquisarTarefas}/>
         <ul>
           <li>
             <button onClick={() => handleListarPorConcluidas(false)}>
