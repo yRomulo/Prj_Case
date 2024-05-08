@@ -1,11 +1,19 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import { Container, Sidebar, Content } from "./styles";
 
-export function NoteCreation({ noteCreation }) {
+export function NoteCreation() {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState("");
+  const [isConcluida, setIsConcluida] = useState(false);
+
+  const salvarTarefaLocalStorage = (tarefa) => {
+    const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+    tarefas.push(tarefa);
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  };
 
   const handleChangeTitulo = (event) => {
     setTitulo(event.target.value);
@@ -20,17 +28,23 @@ export function NoteCreation({ noteCreation }) {
   };
 
   const handleCadastrar = () => {
-    if (!titulo || !descricao || !prioridade) return;
-    adicionarTarefa({ titulo, descricao, prioridade });
+    if (!titulo || !descricao || !prioridade)
+      return alert("Campos não preenchidos");
+    const novaTarefa = { id: uuidv4(), titulo, descricao, prioridade, isConcluida };
+    salvarTarefaLocalStorage(novaTarefa);
     setTitulo("");
     setDescricao("");
     setPrioridade("");
+    setIsConcluida(false);
+    alert("Tarefa criada com sucesso");
   };
+
   return (
     <Container>
       <Sidebar>
-        <button>Voltar a lista de tarefas</button>
-        
+        <Link to="/">
+          <button>Voltar a lista de tarefas</button>
+        </Link>
       </Sidebar>
       <Content>
         <h1>Nova Tarefa</h1>
@@ -45,7 +59,7 @@ export function NoteCreation({ noteCreation }) {
         </label>
         <br />
         <label>
-          <input
+          <textarea
             id="desc"
             type="text"
             placeholder="Descrição"
